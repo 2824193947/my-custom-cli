@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 // layout路由
 const layouts = import.meta.globEager('../layouts/*.vue')
 // 子路由
-const views = import.meta.globEager('../views/*/*.vue')
+const views = import.meta.globEager('../views/**/*.vue')
 
 function getRoutes() {
 	const layoutsRoutes = [] as RouteRecordRaw[]
@@ -16,6 +16,7 @@ function getRoutes() {
 	return layoutsRoutes
 }
 
+// 生成子路由对象
 function getChildRoutes(layoutRoute: RouteRecordRaw) {
 	const layoutsRoutes = [] as RouteRecordRaw[]
 	Object.entries(views).forEach(([files, moudle]) => {
@@ -36,7 +37,7 @@ function getRouteByMoudle(files: string, moudle: {[key: string]: any}) {
 		path: `/${name}`,
 		component: moudle.default,
 	} as RouteRecordRaw
-	return route
+	return Object.assign(route, moudle.default?.route)
 }
 
 export default getRoutes()

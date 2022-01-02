@@ -1,7 +1,6 @@
 import { App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import layoutRoutes from './autoload'
-console.log("🚀 ~ layoutRoutes", layoutRoutes)
 import routes from './moudle/routes'
 
 const router = createRouter({
