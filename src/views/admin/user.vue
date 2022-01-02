@@ -1,5 +1,5 @@
 <template>
-  <div>user</div>
+  <div>admin.user</div>
 </template>
 
 <script setup lang="ts">
