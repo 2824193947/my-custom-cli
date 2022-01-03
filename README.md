@@ -7,6 +7,7 @@
 - src/router 路由的一些配置 autoload 自动注册路由
 - src/views 页面文件，里面分别有页面布局的文件夹对应layout
 - src/main.ts 项目入口
+- vite 相关配置文件夹
 
 ### 2. 添加页面时注意:
 1. 首先看你需要什么结构的页面: 
