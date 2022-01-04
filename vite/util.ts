@@ -9,8 +9,13 @@ export function parseEnv(env: Record<string, any>) {
 }
 
 function transformType(key: string, value: any, newEnv: any) {
-  if (value === 'true' || value === 'false') {
-    newEnv[key] = value === 'true' ? true : false;
+  switch(value) {
+    case 'true':
+      newEnv[key] = true;
+      break;
+    case 'false':
+      newEnv[key] = false;
+      break;
   }
   if (/^\d+$/.test(value)) {
     newEnv[key] = parseInt(value)
