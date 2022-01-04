@@ -1,13 +1,9 @@
 import vue from '@vitejs/plugin-vue'
 import { setupMockPlugin } from './mock'
 
-export function setupVitePlugins(isBuld: boolean, env: Record<string, any>) {
+export function setupVitePlugins(isBuld: boolean, env: ViteEnv) {
   return [
     vue(),
     setupMockPlugin(isBuld, env)
   ]
-}
-
-type Record<T extends keyof any, D> = {
-  [P in T]: D
 }

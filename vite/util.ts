@@ -1,14 +1,14 @@
 import _ from 'lodash';
 
-export function parseEnv(env: Record<string, any>) {
-  const newEnv = _.cloneDeep(env)
+export function parseEnv(env: Record<string, any>): ViteEnv {
+  const newEnv: any = _.cloneDeep(env)
   Object.entries(env).forEach(([key, value]) => {
-    transformType(key, value, newEnv)
+    transformType(newEnv, key, value)
   })
   return newEnv
 }
 
-function transformType(key: string, value: any, newEnv: any) {
+function transformType(newEnv: any, key: string, value: any) {
   switch(value) {
     case 'true':
       newEnv[key] = true;
