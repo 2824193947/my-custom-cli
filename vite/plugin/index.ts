@@ -7,3 +7,7 @@ export function setupVitePlugins(isBuld: boolean, env: Record<string, any>) {
     setupMockPlugin(isBuld, env)
   ]
 }
+
+type Record<T extends keyof any, D> = {
+  [P in T]: D
+}
