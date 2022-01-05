@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "mockjs": "^1.1.0",
     "vite-plugin-mock": "^2.9.6",
     "vue": "^3.2.25",

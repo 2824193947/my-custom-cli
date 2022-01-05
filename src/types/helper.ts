@@ -1,5 +1,4 @@
 import _ from 'lodash'
-
 class Helper {
   public env = {} as ImportMetaEnv
   constructor() {
@@ -19,5 +18,7 @@ class Helper {
 
 const helper = new Helper()
 const env = helper.env
+
+
 export default helper
 export { env }
