@@ -1,6 +1,6 @@
 import Axios from './Axios'
 
 const instance = new Axios({
-  baseUrl: '/',
+  baseURL: '/',
 	timeout: 5000,
 })
