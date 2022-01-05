@@ -1,7 +1,12 @@
-import _ from 'lodash';
+import _ from 'lodash'
 
-export function parseEnv(env: Record<string, any>): ViteEnv {
-  const envs: any = _.cloneDeep(env)
+class Helper {
+  public env = {} as ImportMetaEnv
+  constructor() {
+    this.env = this.getEnvs()
+  }
+  private getEnvs(): ImportMetaEnv {
+    const envs: any = _.cloneDeep(import.meta.env)
     Object.entries(envs as Record<string, any>).forEach(([key, value]) => {
       if (value === 'true' || value === 'false') envs[key] = value === 'true' ? true : false
       else if (/^\d+$/.test(value)) envs[key] = Number(value)
@@ -9,4 +14,10 @@ export function parseEnv(env: Record<string, any>): ViteEnv {
       else if (value === 'undefined') envs[key] = undefined;
     })
     return envs
+  }
 }
+
+const helper = new Helper()
+const env = helper.env
+export default helper
+export { env }
