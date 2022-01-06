@@ -7,16 +7,15 @@ export default class Axios {
 		this.interceptors()
 	}
 
-	public request<T>(config: AxiosRequestConfig) {
-		return this.instance.request(config)
-		// return new Promise((resolve, reject) => {
-		// 	try {
-		// 		this.instance.request<D>(config)
-		// 		resolve()
-		// 	} catch (error) {
-		// 		reject(error)
-		// 	}
-		// }) as Promise<D>
+	public async request<T, D = AxiosResponse<T>>(config: AxiosRequestConfig<D>) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const response = await this.instance.request<D>(config)
+				resolve(response.data)
+			} catch (error) {
+				reject(error)
+			}
+		}) as Promise<D>
 	}
 
 	private interceptors() {
