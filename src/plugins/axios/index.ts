@@ -1,6 +1,9 @@
 import Axios from './Axios'
 
-const instance = new Axios({
-  baseURL: '/',
+const http = new Axios({
+  baseURL: '/api',
 	timeout: 5000,
+  headers: {}
 })
+
+export { http }

@@ -1,7 +1,7 @@
 // user.js
 export default [
   {
-    url: '/api/get',
+    url: '/api/user',
     method: 'get',
     response: () => {
       return {

@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios'
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 
 export default class Axios {
   private instance
@@ -7,8 +7,16 @@ export default class Axios {
 		this.interceptors()
 	}
 
-	public request<T>() {
-		// this.instance.request<ResponseResult<T>>(config)
+	public request<T>(config: AxiosRequestConfig) {
+		return this.instance.request(config)
+		// return new Promise((resolve, reject) => {
+		// 	try {
+		// 		this.instance.request<D>(config)
+		// 		resolve()
+		// 	} catch (error) {
+		// 		reject(error)
+		// 	}
+		// }) as Promise<D>
 	}
 
 	private interceptors() {
