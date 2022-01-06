@@ -6,8 +6,8 @@ export default class Axios {
 		this.instance = axios.create(config)
 		this.interceptors()
 	}
-
-	public async request<T, D = AxiosResponse<T>>(config: AxiosRequestConfig<D>) {
+	// <T 传入的类型, D 最终给axios返回的类型 = ResponseResult 定义的返回类型<T>>
+	public async request<T, D = ResponseResult<T>>(config: AxiosRequestConfig<D>) {
 		return new Promise(async (resolve, reject) => {
 			try {
 				const response = await this.instance.request<D>(config)

@@ -6,7 +6,7 @@ interface User {
   axm: '男' | '女'
 }
 export function user() {
-  return http.request<ResponseResult<User>>({
+  return http.request<User>({
     url: '/user',
   })
 }

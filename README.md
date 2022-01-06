@@ -1,4 +1,4 @@
-# Vue 3 + Typescript + Vite 管理系统脚手架（不考虑兼容都是最新的工具）
+# Vue 3 + Typescript + Vite + pnina 管理系统脚手架（不考虑兼容都是最新的工具）
 
 # 项目目录
 ### 1. 项目目录
@@ -8,7 +8,10 @@
 - src/views 页面文件，里面分别有页面布局的文件夹对应layout
 - src/main.ts 项目入口
 - vite 相关配置文件夹
-- plugins 相关插件抽离
+- plugins 相关插件抽离 
+	- Axios
+	- tailwindcss
+- api 所有api接口
 
 ### 2. 添加页面时注意:
 1. 首先看你需要什么结构的页面: 
