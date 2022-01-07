@@ -25,8 +25,6 @@
 </template>
 
 <script setup lang="ts">
-// import gInput from '@/components/from/g-input.vue'
-// import gButton from '@/components/from/g-button.vue'
 
 </script>
 
