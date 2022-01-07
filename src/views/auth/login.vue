@@ -6,7 +6,8 @@
 			<div class="p-6">
 				<h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
 				<div class="mt-8">
-					<g-input/>
+					<span>{{from.authNumber}}</span>
+					<g-input v-model="from.authNumber"/>
 					<g-input class="mt-5"/>
 				</div>
 				<g-button/>
@@ -25,7 +26,9 @@
 </template>
 
 <script setup lang="ts">
+import { reactive } from 'vue';
 
+const from = reactive({ authNumber: 0 })
 </script>
 
 <style lang="scss" scoped>
