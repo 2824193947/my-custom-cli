@@ -6,13 +6,12 @@
 			<div class="p-6">
 				<h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
 				<div class="mt-8">
-					<g-Input/>
-					<g-Input class="mt-5"/>
+					<g-input/>
+					<g-input class="mt-5"/>
 				</div>
-				<g-Button/>
+				<g-button/>
 				<div class="flex gap-2 justify-center mt-5">
 					<a class="text-xs text-gray-700 hover:text-violet-700">网站首页</a>
-					<g-Link/>
 					<a href="javascript:void" class="text-xs text-gray-700">会员注册</a>
 					<a href="javascript:void" class="text-xs text-gray-700">找回密码</a>
 					<a href="javascript:void" class="text-xs text-gray-700">找回密码</a>
@@ -26,8 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import gInput from '@/components/from/g-input.vue'
-import gButton from '@/components/from/g-button.vue'
+// import gInput from '@/components/from/g-input.vue'
+// import gButton from '@/components/from/g-button.vue'
 
 </script>
 
