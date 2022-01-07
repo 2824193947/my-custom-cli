@@ -1,10 +1,10 @@
 <template>
-  <input type="text" placeholder="请输入手机号或邮箱" class="hd-input" :value="props.moudelVal" @input="$emit('update:moudelVal',  ($event.target as HTMLInputElement).value)"/>
+  <input type="text" placeholder="请输入手机号或邮箱" class="hd-input" :value="props.modelValue" @input="$emit('update:modelValue', $event.target.value)"/>
 </template>
 
 <script setup lang="ts">
 const props = defineProps({
-  moudelVal: String
+  modelValue: String
 })
 </script>
 

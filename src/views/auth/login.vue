@@ -6,7 +6,6 @@
 			<div class="p-6">
 				<h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
 				<div class="mt-8">
-					<span>{{from.authNumber}}</span>
 					<g-input v-model="from.authNumber"/>
 					<g-input class="mt-5"/>
 				</div>
@@ -19,7 +18,7 @@
 				</div>
 			</div>
 			<div class="hidden md:block">
-				<img src="/images/login.jpg" class="h-80 w-full object-cover" />
+				<img src="/images/login.jpg" class="h-96 w-full object-cover" />
 			</div>
 		</div>
 	</div>
