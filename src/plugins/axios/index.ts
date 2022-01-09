@@ -1,7 +1,8 @@
 import Axios from './Axios'
+import { env } from '@/utils/helper'
 
 const http = new Axios({
-  baseURL: '/api',
+  baseURL: env.VITE_APP_URL,
 	timeout: 5000,
   headers: {}
 })

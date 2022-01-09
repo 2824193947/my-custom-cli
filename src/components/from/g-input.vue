@@ -10,6 +10,6 @@ const props = defineProps({
 
 <style lang="scss">
 .hd-input {
-  @apply border w-full rounded-sm py-1 px-2 outline-none border-gray-200 placeholder:text-xs focus:ring-2 ring-offset-2 ring-blue-600 duration-300 focus:border-white;
+  @apply border w-full rounded-sm py-1 px-2 outline-none border-gray-200 placeholder:text-xs focus:ring-2 ring-offset-1 ring-blue-600 duration-300 focus:border-white;
 }
 </style>

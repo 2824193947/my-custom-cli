@@ -1,4 +1,5 @@
 import { RouteRecordRaw } from "vue-router";
+import { env } from '@/utils/helper'
 
 // layout路由
 const layouts = import.meta.globEager('../layouts/*.vue')
@@ -40,4 +41,6 @@ function getRouteByMoudle(files: string, moudle: {[key: string]: any}) {
 	return Object.assign(route, moudle.default?.route)
 }
 
-export default getRoutes()
+const routes = env.VITE_ROUTER_AUTOLOAD ? getRoutes() : [] as RouteRecordRaw[]
+
+export default routes
