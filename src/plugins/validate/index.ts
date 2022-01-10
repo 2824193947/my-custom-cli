@@ -1,3 +1,4 @@
+// 表单验证解决方案
 import * as veeValidate from 'vee-validate'
 import rules from '@vee-validate/rules'
 import { loadLocaleFromURL, localize } from '@vee-validate/i18n'

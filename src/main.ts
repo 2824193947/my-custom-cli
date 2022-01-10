@@ -3,7 +3,6 @@ import router, { setupRouter } from '@/router/index'
 import { setupPlugins } from './plugins'
 import App from './App.vue'
 
-
 async function bootstrap() {
   const app = createApp(App)
   setupRouter(app)

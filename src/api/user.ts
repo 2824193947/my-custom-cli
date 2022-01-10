@@ -11,4 +11,13 @@ export function user() {
   })
 }
 
+interface login {
+  token: string
+}
+export function login() {
+  return http.request<login>({
+    url: '/user',
+  })
+}
+
 
