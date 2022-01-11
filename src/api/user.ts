@@ -11,12 +11,14 @@ export function user() {
   })
 }
 
-interface login {
+interface loginInterface {
   token: string
 }
-export function login() {
-  return http.request<login>({
-    url: '/user',
+export function login(data: any) {
+  return http.request<loginInterface>({
+    url: '/login',
+    method: 'POST',
+    data
   })
 }
 

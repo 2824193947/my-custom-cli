@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import v from '@/plugins/validate/index'
 import { reactive, ref } from 'vue'
-
+import { login } from '@/api/user'
+// 引入表单校验库
 const { Form, Field, ErrorMessage } = v
+// data
 const account = ref('')
 const password = ref<number>()
+
 const schema = {
 	account: {required: true, email: true},
 	password: {required: true, min: 3}
 }
-const onSubmit = (values: object) => {
-	console.log("🚀 ~ values", values)
+const onSubmit = async (values: object) => {
+	const {data: { token }}  = await login(values)
+	localStorage.setItem('token',token)
 }
 </script>
 
@@ -21,21 +25,21 @@ const onSubmit = (values: object) => {
 		>
 			<div class="p-6">
 				<h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
-				<div class="mt-8">
-					<Field name="account" class="g-input" label="账号" placeholder="输入账号"></Field>
+				<article class="mt-8">
+					<Field value="2824193947@qq.com" name="account" class="g-input" label="账号" placeholder="输入账号"></Field>
 					<div v-if="errors.account" class="g-error">请输入邮箱</div>
-					<Field name="password" class="g-input" label="密码" type="password" placeholder="输入密码"></Field>
+					<Field value="123123123" name="password" class="g-input" label="密码" type="password" placeholder="输入密码"></Field>
 					<ErrorMessage name="password" as="div" class="g-error"></ErrorMessage>
-				</div>
+				</article>
 				<g-button/>
-				<div class="flex gap-2 justify-center items-center mt-5">
+				<article class="flex gap-2 justify-center items-center mt-5">
 					<a href="javascript:void" class="text-xs text-gray-700">会员注册</a>
 					<a href="javascript:void" class="text-xs text-gray-700">找回密码</a>
 					<a href="javascript:void" class="text-xs text-gray-700">找回密码</a>
-				</div>
-				<div class="flex gap-2 justify-center items-center mt-5">
+				</article>
+				<article class="flex gap-2 justify-center items-center mt-5">
 					<i class="fab fa-weixin bg-green-600 text-white rounded-full cursor-pointer p-1"></i>
-				</div>
+				</article>
 			</div>
 			<div class="hidden md:block relative">
 				<img src="/images/login.jpg" class="absolute h-full w-full object-cover" />
