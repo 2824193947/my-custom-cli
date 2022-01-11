@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { setLocalstore } from '@/utils/index'
 import v from '@/plugins/validate/index'
 import { reactive, ref } from 'vue'
 import { login } from '@/api/user'
@@ -14,7 +15,7 @@ const schema = {
 }
 const onSubmit = async (values: object) => {
 	const {data: { token }}  = await login(values)
-	localStorage.setItem('token',token)
+	setLocalstore('token', { token })
 }
 </script>
 

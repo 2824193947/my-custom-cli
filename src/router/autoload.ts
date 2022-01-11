@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from "vue-router";
-import { env } from '@/utils/helper'
+import { env } from '@/utils/index'
 
 // layout路由
 const layouts = import.meta.globEager('../layouts/*.vue')

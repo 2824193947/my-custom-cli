@@ -20,7 +20,6 @@ const helper = new Helper()
 const env = helper.env
 
 
-export default helper
 export {
   env
 }
