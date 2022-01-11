@@ -26,7 +26,7 @@ function getLocalstore(key: string): StoreDataType | null {
   return null
 }
 
-export {
+export default {
   setLocalstore,
   getLocalstore
 }
