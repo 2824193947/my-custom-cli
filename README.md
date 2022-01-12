@@ -21,7 +21,11 @@
 	- 然后直接访问对应布局内容 /admin.user
 
 ### 3. 满足自定义路由
-- 在.vue文件中导入需要定义的路由路径
+- 在.vue文件中导出需要定义的路由路径
 ```javascript
-
+<script>
+	export default {
+		route: {path: '/admin', component: admin.vue}
+	}
+</script>
 ```

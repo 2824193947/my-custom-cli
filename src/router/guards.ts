@@ -8,9 +8,9 @@ class Ground {
   }
   public run() {
     console.log(this.router);
-    this.router.beforeEach(() =>{})
-  }
-  private beforeEach(to: RouteLocationNormalized, from: RouteLocationNormalized) {
+    this.router.beforeEach((to, from) => { console.log(to) })
+  } 
+  private beforeEach(to: RouteLocationNormalized, from: RouteLocationNormalized, next: RouteLocationNormalized) {
     
   }
   private isLogin(route: RouteLocationNormalized) {
