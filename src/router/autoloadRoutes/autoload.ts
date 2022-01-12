@@ -2,9 +2,9 @@ import { RouteRecordRaw } from "vue-router";
 import utils from '@/utils/index'
 
 // layout路由
-const layouts = import.meta.globEager('../layouts/*.vue')
+const layouts = import.meta.globEager('../../layouts/*.vue')
 // 子路由
-const views = import.meta.globEager('../views/**/*.vue')
+const views = import.meta.globEager('../../views/**/*.vue')
 
 function getRoutes() {
 	const layoutsRoutes = [] as RouteRecordRaw[]
