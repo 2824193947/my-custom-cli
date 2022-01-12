@@ -15,7 +15,10 @@ const schema = {
 }
 const onSubmit = async (values: object) => {
 	const {data: { token }}  = await login(values)
-	utils.store.setLocalstore('token', { token })
+	utils.store.setLocalstore('token', { token, expire: 3})
+}
+const getToken = () => {
+	console.log(utils.store.getLocalstore('token'));
 }
 </script>
 
