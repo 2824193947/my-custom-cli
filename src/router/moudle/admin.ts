@@ -3,7 +3,7 @@ import { RouteRecordRaw } from 'vue-router';
 export default {
   name: 'admin',
   path: '/admin',
-  redirect: '/admin/home',
+  redirect: '/admin/user',
   component: () => import('@/layouts/admin.vue'),
   meta: { auth: true },
   children: [
@@ -13,4 +13,4 @@ export default {
       component: () => import('@/views/admin/home.vue'),
     },
   ],
-} as RouteRecordRaw
+} as unknown as RouteRecordRaw
