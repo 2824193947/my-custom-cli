@@ -12,7 +12,7 @@ function setLocalstore(key: string, data: StoreDataType): void {
   localStorage.setItem(key, JSON.stringify(data))
 }
 
-function getLocalstore(key: string): StoreDataType | null {
+function getLocalstore(key: string): string | null {
   const item = localStorage.getItem(key)
   if (item) {
     const data = JSON.parse(item)
