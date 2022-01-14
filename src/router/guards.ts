@@ -15,8 +15,9 @@ class Ground {
 
   private async beforeEach(to: RouteLocationNormalized, from: RouteLocationNormalized) {
     console.log("~ this.isLogin(to)", this.isLogin(to))
+    console.log("~ this.isGuest(to)", this.isGuest(to))
     if (this.isLogin(to)) return { path: '/login' }
-    // if (this.isGuest(to) === false) return from
+    if (this.isGuest(to) === false) return from
     // await this.getUserInfo()
   }
 

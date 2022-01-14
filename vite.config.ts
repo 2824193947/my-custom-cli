@@ -9,6 +9,9 @@ export default ({ command, mode}: ConfigEnv) => {
   const env = parseEnv(loadEnv(mode, root))
   console.log("---当前在:",command, mode,'\n ---env', env)
   return {
+    server: {
+      open : true 
+    },
     plugins: setupVitePlugins(isBuld, env),
     resolve: {
       alias
