@@ -4,6 +4,7 @@ import v from '@/plugins/validate/index'
 import { reactive, ref } from 'vue'
 import { login } from '@/api/user'
 import { CacheEnum } from '@/enum/cacheEnum'
+import router from '@/router'
 
 // 引入表单校验库
 const { Form, Field, ErrorMessage } = v
@@ -17,7 +18,8 @@ const schema = {
 }
 const onSubmit = async (values: object) => {
 	const {data: { token }}  = await login(values)
-	utils.store.setLocalstore(CacheEnum.TOKEN_NAME, { token, expire: 60})
+	utils.store.setLocalstore(CacheEnum.TOKEN_NAME, { token, expire: 30000})
+	router.push({name: 'home'})
 }
 const getToken = () => {
 	console.log(utils.store.getLocalstore('token'));

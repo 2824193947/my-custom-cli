@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import router, { setupRouter } from '@/router/index'
 import { setupPlugins } from './plugins'
 import App from './App.vue'
+import '@/styles/global.scss'
 
 async function bootstrap() {
   const app = createApp(App)
